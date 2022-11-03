@@ -15,15 +15,10 @@ namespace ChallengesWithTestsMark8.Tests
         [InlineData(4, 7, false)]
         [InlineData(-1, 1, false)]
         [InlineData(5, 6, false)]
-        public void AreTwoNumbersTheSame(int number1, int number2, bool expected)
+        public void AreTwoNumbersTheSame(int number, int number2, bool expected)
         {
-            // Arrange
             ChallengesSet01 challenger = new ChallengesSet01();
-
-            // Act
-            bool actual = challenger.AreTwoNumbersTheSame(number1, number2);
-
-            // Assert
+            var actual = challenger.AreTwoNumbersTheSame(number, number2);
             Assert.Equal(expected, actual);
         }
 
@@ -62,16 +57,11 @@ namespace ChallengesWithTestsMark8.Tests
         [InlineData(-5, 5, 0)]
         [InlineData(-10, -7, -17)]
         [InlineData(-10, -15, -25)]
-        public void Add(int addend1, int addend2, int expectedSum)
+        public void AddTest(int a, int b, double expected)
         {
-            // Arrange
-            ChallengesSet01 challenger = new ChallengesSet01();
-
-            // Act
-            int actual = challenger.Add(addend1, addend2);
-
-            // Assert
-            Assert.Equal(expectedSum, actual);
+            ChallengesSet01 obj = new ChallengesSet01();
+            var actual = obj.Add(a, b);
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
